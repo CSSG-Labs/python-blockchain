@@ -1,2 +1,3 @@
-# python-blockchain
-Simple blockchain coded in Python
+# Python Blockchain
+
+Community repository to build a simple blockchain application in Python using the requests and Flask libraries.
