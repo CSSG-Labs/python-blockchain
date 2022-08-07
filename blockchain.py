@@ -1,7 +1,7 @@
 class Blockchain():
     def __init__(self):
-        self.chain = []
-        self.current_transactions = []
+        self.chain = [] # List to hold blocks
+        self.current_transactions = [] # List to hold transactions
     
     def new_block(self):
         # Create a new block and add to blockchain
