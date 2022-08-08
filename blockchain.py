@@ -1,3 +1,7 @@
+import hashlib
+import json
+
+
 class Blockchain():
     def __init__(self):
         self.chain = [] # List to hold blocks
@@ -13,8 +17,18 @@ class Blockchain():
 
     @staticmethod
     def hash(block):
-        # Hashes a block
-        pass
+        """
+        Creates a SHA-256 hash of a block
+        :param block: <dict> block
+        :return: <str>
+        """
+
+        # Convert block dict to json string using json.dumps and sort keys for consistency across
+        # hashes and encode json string using encode method 
+        block_string = json.dumps(block, sort_keys=True).encode()
+
+        # Hash string using sha256 and apply hexdigest, then return
+        return hashlib.sha256(block_string).hexdigest()
 
     @property
     def last_block(self):
