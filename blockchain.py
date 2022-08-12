@@ -7,8 +7,18 @@ class Blockchain():
         self.chain = [] # List to hold blocks
         self.current_transactions = [] # List to hold transactions
     
-    def new_block(self):
+    def new_block(self, proof, previous_hash=None):
         # Create a new block and add to blockchain
+
+        # Todo: Remove these notes before merging this code
+        # Transaction: sender, recipient, amount
+
+        if previous_hash != self.last_block.hash:
+            return None
+
+        # Todo: Figure out what proof is
+
+        
         pass
 
     def new_transaction(self):
