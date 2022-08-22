@@ -1,6 +1,5 @@
 import hashlib
 import json
-from time import time
 
 
 class Blockchain():
@@ -8,27 +7,22 @@ class Blockchain():
         self.chain = [] # List to hold blocks
         self.current_transactions = [] # List to hold transactions
     
-    def new_block(self, proof, previous_hash=None):
+    def new_block(self):
         # Create a new block and add to blockchain
-        block = {
-            'index': len(self.chain) + 1,
-            'timestamp': time(),
-            'transactions': self.current_transactions,
-            'proof': proof,
-            'previous_hash': previous_hash or self.hash(self.chain[-1]),
-        }
-
-        # Reset the current list of transactions
-        self.current_transactions = []
-
-        # Append block to chain and return block
-        self.chain.append(block)
-        return block
-
-    def new_transaction(self):
-        # Add new transaction to list of transactions
         pass
 
+    def new_transaction(self, sender, recipient, amount):
+        # Add new transaction to list of transactions
+       self.current_transactions.append({
+       
+        'sender': sender,
+        'recipient': recipient,
+        'amount':amount,
+       })
+
+       return self.last_block['index'] +1
+
+       
     @staticmethod
     def hash(block):
         """
