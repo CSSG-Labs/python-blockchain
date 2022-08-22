@@ -13,7 +13,13 @@ class Blockchain():
 
     def new_transaction(self):
         # Add new transaction to list of transactions
-        pass
+        self.current_transactions.append({
+            'sender': sender,
+            'recipient': recipient,
+            'amount': amount,
+        })
+
+        return self.last_block['index'] + 1
 
     @staticmethod
     def hash(block):
