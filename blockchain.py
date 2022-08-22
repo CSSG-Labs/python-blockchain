@@ -11,10 +11,18 @@ class Blockchain():
         # Create a new block and add to blockchain
         pass
 
-    def new_transaction(self):
+    def new_transaction(self, sender, recipient, amount):
         # Add new transaction to list of transactions
-        pass
+       self.current_transactions.append({
+       
+        'sender': sender,
+        'recipient': recipient,
+        'amount':amount,
+       })
 
+       return self.last_block['index'] +1
+
+       
     @staticmethod
     def hash(block):
         """
